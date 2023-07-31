@@ -1,0 +1,28 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="field col-12 md:col-6">
+            <label htmlFor="nome">Nome</label>
+            <input pInputText id="nome" formControlName="nome" class="w-full "/>
+            <small id="nome-help" class="p-error" *ngIf="formUtils.validateField(form, 'nome')">
+                {{ formUtils.getErrorMessage(form, "nome") }}
+            </small>
+        </div>
+        <div class="field col-12 md:col-4">
+            <label htmlFor="valor">Valor</label>
+            <input pInputText id="valor" formControlName="valor"class="w-full" />
+            <small id="valor-help" class="p-error" *ngIf="formUtils.validateField(form, 'valor')">
+                {{ formUtils.getErrorMessage(form, "valor") }}
+            </small>
+        </div>
+        <div class="field col-12 md:col-4">
+            <label htmlFor="transacao">Transação</label>
+            <input pInputText id="valor" formControlName="valor"class="w-full" />
+            <small id="valor-help" class="p-error" *ngIf="formUtils.validateField(form, 'valor')">
+                {{ formUtils.getErrorMessage(form, "valor") }}
+            </small>
+        </div>
+        <div class="form-toolbox flex justify-content-center">
+            <button type="submit" pButton label="Salvar" class="p-button-raised p-button-success" icon="pi pi-check"></button>
+
+            <button type="button" pButton label="Cancelar" class="p-button-raised p-button-text" icon="pi pi-times" (click)="onCancel()"></button>
+        </div>
+</form>

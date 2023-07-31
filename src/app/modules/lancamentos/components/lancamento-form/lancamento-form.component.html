@@ -1,0 +1,53 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="p-formgrid grid">
+        <div class="field col-12 md:col-12">
+            <label htmlFor="descricao">Descrição</label>
+            <input pInputText id="descricao" formControlName="descricao" class="w-full " />
+            <small id="descricao-help" class="p-error" *ngIf="formUtils.validateField(form, 'descricao')">
+                {{ formUtils.getErrorMessage(form, "descricao") }}
+            </small>
+        </div>
+        <div class="field col-6 md:col-6">
+            <label htmlFor="usuario">Usuário</label>
+            <p-dropdown [options]="usuarios" optionLabel="nome" class="w-full" formControlName="usuario"
+                appendTo="body"></p-dropdown>
+            <small id="usuario-help" class="p-error" *ngIf="formUtils.validateField(form, 'usuario')">
+                {{ formUtils.getErrorMessage(form, "usuario") }}
+            </small>
+        </div>
+        <div class="field col-6 md:col-6">
+            <label htmlFor="valor">Valor</label>
+            <p-inputNumber mask="" id="valor" formControlName="valor" class="w-full" inputId="currency-br" mode="currency" currency="BRL" locale="pt-BR"></p-inputNumber>
+            <small id="valor-help" class="p-error" *ngIf="formUtils.validateField(form, 'valor')">
+                {{ formUtils.getErrorMessage(form, "valor") }}
+            </small>
+        </div>
+        <div class="field col-6 md:col-6">
+            <label htmlFor="data">Data</label>
+            <p-calendar formControlName="data" class="w-full" appendTo="body" dateFormat="dd/mm/yy"></p-calendar>
+            <small id="data-help" class="p-error" *ngIf="formUtils.validateField(form, 'data')">
+                {{ formUtils.getErrorMessage(form, "data") }}
+            </small>
+        </div>
+        <!-- <div class="field col-6 md:col-6">
+            <label htmlFor="transacao">Transação</label>
+            <p-dropdown [options]="transacoes" formControlName="transacao" class="w-full" appendTo="body"></p-dropdown>
+            <small id="valor-help" class="p-error" *ngIf="formUtils.validateField(form, 'valor')">
+                {{ formUtils.getErrorMessage(form, "valor") }}
+            </small>
+        </div> -->
+        <div class="field col-6 md:col-6">
+            <label htmlFor="categoria">Categoria</label>
+            <p-dropdown [options]="categorias" optionLabel="nome" class="w-full" formControlName="categoriaLancamento"
+                appendTo="body"></p-dropdown>
+            <small id="categoria-help" class="p-error" *ngIf="formUtils.validateField(form, 'categoria')">
+                {{ formUtils.getErrorMessage(form, "categoria") }}
+            </small>
+        </div>
+    </div>
+    <div class="form-toolbox flex justify-content-center">
+        <button type="submit" pButton label="Salvar" class="p-button-raised p-button-success"
+            icon="pi pi-check"></button>
+    </div>
+
+</form>

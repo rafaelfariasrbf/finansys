@@ -1,16 +1,17 @@
 .layout-sidebar {
     position: fixed;
-    width: 300px;
-    height: calc(100vh - 9rem);
+    width: 250px;
+    height: calc(100vh - 5rem);
     z-index: 999;
     overflow-y: auto;
     user-select: none;
-    top: 7rem;
-    left: 2rem;
+    top: 5rem;
+    // left: 2rem;
     transition: transform $transitionDuration, left $transitionDuration;
     background-color: var(--surface-overlay);
-    border-radius: $borderRadius;
-    padding: 0.5rem 1.5rem;
+    //background-color: #104c6c;
+    // border-radius: $borderRadius;
+    padding: 0.5rem .7rem;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, .02), 0px 0px 2px rgba(0, 0, 0, .05), 0px 1px 4px rgba(0, 0, 0, .08);
 }
 
@@ -25,7 +26,8 @@
             text-transform: uppercase;
             font-weight: 700;
             color: var(--surface-900);
-            margin: .75rem 0;
+            //color: #c2c7d0;
+            margin: .75rem .3rem;
         }
 
         >a {
@@ -62,9 +64,10 @@
             position: relative;
             outline: 0 none;
             color: var(--text-color);
+            //color: #ececec;
             cursor: pointer;
             padding: .75rem 1rem;
-            border-radius: $borderRadius;
+            border-radius: 5px;
             transition: background-color $transitionDuration, box-shadow $transitionDuration;
 
             .layout-menuitem-icon {
@@ -79,11 +82,14 @@
 
             &.active-route {
                 font-weight: 700;
-                color: var(--primary-color);
+                color: #fff;
+                background-color: #065F90;
             }
 
             &:hover {
-                background-color: var(--surface-hover);
+                background-color: rgba(63, 81, 181, 0.12);
+                font-weight: 700;
+                color: #3F51B5;
             }
 
             &:focus {

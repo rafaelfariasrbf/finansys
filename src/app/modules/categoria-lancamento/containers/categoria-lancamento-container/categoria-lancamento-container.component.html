@@ -1,0 +1,25 @@
+<p-toast></p-toast>
+<section>
+    <header>
+        <div>
+            <div class="flex card-container blue-container overflow-hidden">
+                <div class="flex-grow-1 flex align-items-left justify-content-left ">
+                    <h2>Categorias de Lançamento</h2>
+                </div>
+                <div class="flex-grow-2 flex align-items-center justify-content-center ">
+                    <p-breadcrumb
+                        [model]="_breadcrumbItems"
+                        [home]="_home"
+                        styleClass="p-mt-3"
+                        (onItemClick)="handleBreadcrumbClick($event)"
+                    ></p-breadcrumb>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="card">
+            <router-outlet></router-outlet>
+        </div>
+    </section>
+</section>

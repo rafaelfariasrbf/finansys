@@ -1,0 +1,13 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="field col-12 md:col-6">
+            <label htmlFor="descricao">Descrição</label>
+            <input pInputText id="descricao" formControlName="descricao" class="w-full "/>
+            <small id="descricao-help" class="p-error" *ngIf="formUtils.validateField(form, 'descricao')">
+                {{ formUtils.getErrorMessage(form, "descricao") }}
+            </small>
+        </div>
+        <div class="form-toolbox flex justify-content-center">
+            <button type="submit" pButton label="Salvar" class="p-button-raised p-button-success" icon="pi pi-check"></button>
+            <button type="button" pButton label="Cancelar" class="p-button-raised p-button-text" icon="pi pi-times" (click)="onCancel()"></button>
+        </div>
+</form>

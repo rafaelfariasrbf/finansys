@@ -1,0 +1,29 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="field col-12 md:col-6">
+            <label htmlFor="nome">Nome</label>
+            <input pInputText id="nome" formControlName="nome" class="w-full "/>
+            <small id="nome-help" class="p-error" *ngIf="formUtils.validateField(form, 'nome')">
+                {{ formUtils.getErrorMessage(form, "nome") }}
+            </small>
+        </div>
+        <div class="field col-12 md:col-4">
+            <label htmlFor="idade">Idade</label>
+            <p-inputNumber id="idade" formControlName="idade"class="w-full" [min]="0" [max]="100"></p-inputNumber>
+            <small id="idade-help" class="p-error" *ngIf="formUtils.validateField(form, 'idade')">
+                {{ formUtils.getErrorMessage(form, "idade") }}
+            </small>
+        </div>
+        <div class="field col-12 md:col-6">
+            <label htmlFor="email">E-mail</label>
+            <input pInputText id="email" formControlName="email"class="w-full" />
+            <small id="email-help" class="p-error" *ngIf="formUtils.validateField(form, 'email')">
+                {{ formUtils.getErrorMessage(form, "email") }}
+            </small>
+        </div>
+        <div class="form-toolbox flex justify-content-center">
+            <button type="submit" pButton label="Salvar" class="p-button-raised p-button-success" icon="pi pi-check"></button>
+            <button type="button" pButton label="Cancelar" class="p-button-raised p-button-text" icon="pi pi-times" (click)="onHideDialog()"></button>
+        </div>
+</form>
+<p-progressSpinner *ngIf="loading" strokeWidth="8" fill="var(--surface-ground)" animationDuration=".5s">
+</p-progressSpinner>

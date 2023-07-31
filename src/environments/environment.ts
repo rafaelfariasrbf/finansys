@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+  HOME_URL: 'http://localhost:4200/sisplaer-3.0',
+  API_URL: '/api'
 };
 
 /*
